@@ -1,0 +1,42 @@
+@font-face {
+  font-family: myFont;
+  src: url(./Font.ttf);
+}
+html {
+  font-family: myFont;
+}
+
+body {
+  background-color: #922724;
+  color: black;
+}
+body .hidden-letter {
+  display: inline-block;
+  width: 20px;
+  margin: 5px;
+  font-size: 24px;
+}
+body .guessed-letters {
+  margin-top: 20px;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: [f] 50% [s] 50% [end];
+  grid-template-rows: [first] auto [end];
+  background-color: #e2e8ce;
+  justify-content: center;
+  width: 80vw;
+  height: 90vh;
+  border-radius: 20px;
+}
+
+.right-side {
+  grid-column: s/end;
+  grid-row: first/end;
+}
+
+.left-side {
+  grid-column: f/s;
+  grid-row: first/end;
+}/*# sourceMappingURL=style.css.map */

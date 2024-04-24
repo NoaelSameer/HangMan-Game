@@ -1,9 +1,9 @@
-$primary-color: #acbfa4;
+$primary-color: #922724;
 $secondary-color:#e2e8ce;
 $tertiary-color:#262626;
 @font-face {
     font-family: myFont;
-    src: url(/Browncat.ttf);
+    src: url(./Font.ttf);
 }
 html {
     font-family: myFont;
@@ -41,86 +41,4 @@ body {
 .left-side {
   grid-column: f/s;
   grid-row: first/end;
-}
-
-// PROVIDED BY UIVERSE.IO
-.Btn {
-    position: relative;
-    width: 17vw;
-    height: 6vh;
-    border-radius: 45px;
-    border: none;
-    background-color: $primary-color;
-    color: white;
-    box-shadow: 0px 10px 10px $primary-color inset,
-    0px 5px 10px rgba(5, 5, 5, 0.212),
-    0px -10px 10px $primary-color inset;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-  }
-  
-  .Btn::before {
-    width: 30%;
-    height: 2px;
-    position: absolute;
-    background-color: $primary-color;
-    content: "";
-    filter: blur(1px);
-    top: 7px;
-    border-radius: 50%;
-  }
-  
-  .Btn::after {
-    width: 70%;
-    height: 2px;
-    position: absolute;
-    background-color: $primary-color;
-    content: "";
-    filter: blur(1px);
-    bottom: 7px;
-    border-radius: 50%;
-  }
-  
-  .Btn:hover {
-    animation: jello-horizontal 0.9s both;
-    color: black;
-  }
-  
-  @keyframes jello-horizontal {
-    0% {
-      transform: scale3d(1, 1, 1);
-    }
-  
-    30% {
-      transform: scale3d(1.25, 0.75, 1);
-    }
-  
-    40% {
-      transform: scale3d(0.75, 1.25, 1);
-    }
-  
-    50% {
-      transform: scale3d(1.15, 0.85, 1);
-    }
-  
-    65% {
-      transform: scale3d(0.95, 1.05, 1);
-    }
-  
-    75% {
-      transform: scale3d(1.05, 0.95, 1);
-    }
-  
-    100% {
-      transform: scale3d(1, 1, 1);
-    }
-  }
-  
-#hangmanImg {
-  scale:0.7;
-  width:none;
-  height:none;
 }
