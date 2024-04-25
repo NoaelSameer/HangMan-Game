@@ -1,6 +1,7 @@
 $(document).ready(function(){
     //Array of words for the game
-    var words = ['javascript','vilgax','mcdonolds','toyota','haircut','clownfish']
+const words = ["Superhero", "Avengers", "Villain", "Comic", "Web", "Marvel", "Hero", "Universe", "Power", "Infinity", "Secret", "Weapon", "Shield", "Gamma", "Mutant", "Origin", "Cosmic", "Vibranium", "Asgard"];
+
 
     //Choose random word using index
     var chosenWord = words[Math.floor(Math.random()*words.length)]
@@ -15,25 +16,31 @@ $(document).ready(function(){
     //Function to update the display of the guessed letters
     function updateGuesses(){
         $('#guess-container').empty()
-        $('#guess-container').text("Guessed Letters: " + guessedLetters.join(', '))
+        $('#guess-container').text(guessedLetters.join(', '))
     }
 
     //Function to check if the guess letter is in the chosen word
-    function checkGuess(letter){
-        if(chosenWord.indexOf(letter) === -1){
-            remainingGuesses--
-            $('#remaining-guesses').text("Remaining Guesses: " + remainingGuesses)
-        }else {
-            //Reveal the guessed letter
-            $('.hidden-letter').each(function(index){
-                if(chosenWord[index] === letter){
-                    $(this).text(letter)
+    function checkGuess(letter) {
+        if (chosenWord.indexOf(letter) === -1) {
+            remainingGuesses--;
+            $('#remaining-guesses').text(remainingGuesses);
+            console.log("Incorrect guess. Remaining guesses:", remainingGuesses);
+            $("body").css("background-color", "#922724");
+            $("body").css("color", "#00308F");
+        } else {
+            // Reveal the guessed letter
+            $('.hidden-letter').each(function (index) {
+                if (chosenWord[index] === letter) {
+                    $(this).text(letter.toUpperCase());
+                    $("body").css("background-color", "#00308F");
+                    $("body").css("color", "#922724");
                 }
-            })
+            });
         }
-        updateGuesses()
-        checkGameStatus()
+        updateGuesses();
+        checkGameStatus();
     }
+    
 
     //function to check if the game has been won or lost
     function checkGameStatus(){
@@ -50,7 +57,7 @@ $(document).ready(function(){
     function resetGame(){
         guessedLetters = []
         remainingGuesses = 6
-        $('#remaining-guesses').text('Remaining Guesses: '+ remainingGuesses)
+        $('#remaining-guesses').text(remainingGuesses)
         $('#word-container').empty()
         chosenWord = words[Math.floor(Math.random() * words.length)];
         for(var i=0;i< chosenWord.length;i++){
@@ -63,7 +70,7 @@ $(document).ready(function(){
     $(document).keypress(function(event){
         var letter = String.fromCharCode(event.which).toLowerCase()
         if(letter.match(/[a-z]/) && guessedLetters.indexOf(letter) === -1){
-            guessedLetters.push(letter)
+            guessedLetters.push(letter.toUpperCase())
             checkGuess(letter)
         }
     })
@@ -74,6 +81,6 @@ $(document).ready(function(){
     })
 
     // Initial display of remaining guesses
-    $('#remaining-guesses').text('Remaining Guesses: ' + remainingGuesses);
+    $('#remaining-guesses').text(remainingGuesses);
 
 })

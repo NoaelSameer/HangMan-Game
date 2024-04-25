@@ -8,13 +8,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body>
-    <h1 class="text-center text-[4vw]">spiderman</h1>
-    <div id="word-container"  class="text-center mt-[10%] text-[7rem]"></div>
-    <div id="guess-container" class="guessed-letters"></div>
-    <div id="remaining-guesses"></div>
-    <button id="reset-button">Reset Button</button>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<body class="mb-10 text-[#00308F]">
+    <h1 class="text-center text-[4vw]">SPIDERMAN</h1>
+    <div id="word-container"  class="text-center mt-[1%] text-[10rem]"></div>
+    <div id="guesses" class="guessed-container text-center text-[3rem] mb-8">
+        <p>GUESSED LETTERS</p>
+        <p id="guess-container" class="py-[3rem]"></p>
+    </div>
+    <div id="guesses" class="text-center text-[3rem]">
+        <p>REMAINING GUESSES</p>
+        <p id="remaining-guesses" class="text-center text-[3rem]"></p>
+    </div>
+    
+    <div class="flex justify-center items-center mt-[5rem]">
+        <button type="button" id="reset-button"  class="text-white bg-gradient-to-br from-red-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 cursor-pointer uppercase bg-white px-4 py-2 active:translate-x-0.5 active:translate-y-0.5 hover:shadow-[0.5rem_0.5rem_#F44336,-0.5rem_-0.5rem_#00BCD4] transition">Purple to Blue</button>
+    </div>    <!-- CREDIT TO FLOWBITE AND UIVERSE.IO -->
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 </html>

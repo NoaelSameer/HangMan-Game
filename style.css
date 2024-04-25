@@ -9,6 +9,7 @@ html {
 body {
   background-color: #922724;
   color: black;
+  margin-top: 6vh;
 }
 body .hidden-letter {
   display: inline-block;
